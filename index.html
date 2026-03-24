@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAX Breaking News â March 20, 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-subtle: #f8f9fb;
+            --bg-card: #ffffff;
+            --border: #e8eaed;
+            --border-hover: #d0d3d8;
+            --text-primary: #1a1a2e;
+            --text-secondary: #5a5e6b;
+            --text-muted: #8b8f9e;
+            --accent: #2d2d3f;
+            --accent-light: #f0f0f5;
+            --purple: #6c5ce7;
+            --purple-light: #f3f0ff;
+            --purple-border: #e0d8ff;
+            --yellow: #f59e0b;
+            --yellow-bg: #fffbeb;
+            --yellow-border: #fde68a;
+            --orange: #ea580c;
+            --orange-bg: #fff7ed;
+            --orange-border: #fed7aa;
+            --red: #dc2626;
+            --red-bg: #fef2f2;
+            --red-border: #fecaca;
+            --green: #16a34a;
+            --green-bg: #f0fdf4;
+            --green-border: #bbf7d0;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-subtle);
+            color: var(--text-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo svg { height: 34px; width: auto; }
+
+        .logo-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+            margin: 0 0.4rem;
+        }
+
+        .logo-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .date-badge {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            background: var(--bg-subtle);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+        }
+
+        /* Ticker */
+        .ticker-bar {
+            background: var(--accent);
+            padding: 0.55rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 40s linear infinite;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--purple);
+            border-radius: 50%;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            gap: 0;
+            margin-bottom: 2.5rem;
+            background: var(--bg);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+            padding: 1.25rem;
+        }
+
+        .stat + .stat { border-left: 1px solid var(--border); }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Featured Card */
+        .featured-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .featured-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--accent));
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .priority-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+        }
+
+        .priority-yellow { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+        .priority-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+        .priority-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+        .priority-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+
+        .time-tag { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .card-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+        .card-title a:hover { color: var(--purple); }
+
+        .card-summary {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--purple);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+
+        .read-more:hover { gap: 0.65rem; }
+
+        /* News Grid */
+        .news-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+
+        .news-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.75rem;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .news-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        .news-card .card-title { font-size: 1.1rem; }
+        .news-card .card-summary { font-size: 0.85rem; }
+
+        /* Watchlist */
+        .watchlist-section { margin-top: 2.5rem; }
+
+        .watchlist {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .watch-item {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            transition: border-color 0.3s, box-shadow 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .watch-item:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .watch-item-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+        }
+
+        .watch-item-title a { color: var(--text-primary); text-decoration: none; transition: color 0.2s; }
+        .watch-item-title a:hover { color: var(--purple); }
+
+        .watch-item-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Events */
+        .events-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .event-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .event-item { display: flex; flex-direction: column; gap: 0.2rem; }
+        .event-date { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--purple); }
+        .event-name { font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
+
+        /* Footer */
+        footer {
+            background: var(--accent);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <svg viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="16.5" y="5.5" width="11" height="11" rx="1.8" transform="rotate(45 22 11)" fill="#2d2d3f"/>
+                    <rect x="3.5" y="18.5" width="11" height="11" rx="1.8" transform="rotate(45 9 24)" fill="#2d2d3f"/>
+                    <rect x="16.5" y="18.5" width="11" height="11" rx="1.8" transform="rotate(45 22 24)" fill="#2d2d3f"/>
+                    <rect x="29.5" y="18.5" width="11" height="11" rx="1.8" transform="rotate(45 35 24)" fill="#2d2d3f"/>
+                    <rect x="16.5" y="31.5" width="11" height="11" rx="1.8" transform="rotate(45 22 37)" fill="#2d2d3f"/>
+                    <text x="56" y="39" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="36" letter-spacing="-0.5" fill="#2d2d3f">Pax</text>
+                </svg>
+                <div class="logo-divider"></div>
+                <span class="logo-label">Breaking News</span>
+            </div>
+            <div class="date-badge">Updated March 20, 2026</div>
+        </div>
+    </header>
+
+    <div class="ticker-bar">
+        <span class="ticker-content">
+            ð´ FT: 53 cities deactivate Flock Safety cameras amid ICE backlash &bull; Seattle Mayor pauses all ALPR use &bull; South Pasadena cancels Flock contract over ICE data sharing &bull; Troy City Council tables $78K Flock contract &bull; Motorola seeks hundreds of millions in restitution from Hytera &bull; Axon leads $10.4M investment in Ukrainian drone startup &bull; Fulton County Jail launches Flock drone-as-first-responder program &bull; Rio de Janeiro launches first AI Digital Frontier with 3,200+ cameras &bull; Denver ends Flock city contract &bull; Richmond CA extends Flock contract through 2026 &bull; Motorola wins 10-year UK policing deal &bull; Rekor secures ALPR data retention patent &bull; PAX Intelligence â #breaking-news curated
+        </span>
+    </div>
+
+    <main>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-value">16</span>
+                <span class="stat-label">Stories This Week</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">4</span>
+                <span class="stat-label">Days Covered</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">1</span>
+                <span class="stat-label">ð´ High Priority</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">ð  Medium Priority</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">March 20</span>
+                <span class="stat-label">Last Updated</span>
+            </div>
+        </div>
+
+        <!-- ======================== TODAY MARCH 20 ======================== -->
+        <div class="section-label">Today &mdash; March 20, 2026</div>
+
+        <div class="news-grid">
+            <div class="news-card" style="border-left: 3px solid var(--orange);">
+                <div class="card-meta">
+                    <span class="priority-badge priority-orange">ð  Competitor / Market</span>
+                    <span class="time-tag">06:32 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://publicola.com/2026/03/19/wilson-pauses-police-camera-surveillance-expansion-but-keeps-existing-cameras-on/" target="_blank">Seattle Mayor Wilson Pauses All New ALPR Use and Halts Surveillance Camera Expansion</a></h2>
+                <p class="card-summary">Seattle Mayor Bruce Harrell has ordered a pause on all new automated license plate reader deployments and halted the expansion of police surveillance cameras, citing privacy and civil rights concerns. Existing cameras remain operational while the city reviews its surveillance policies.</p>
+                <a href="https://publicola.com/2026/03/19/wilson-pauses-police-camera-surveillance-expansion-but-keeps-existing-cameras-on/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">07:15 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://www.wamc.org/news/2026-03-20/city-of-troy-officials-and-residents-engaged-in-heated-debate-over-flock-safety-technology-thursday-night" target="_blank">Troy City Council Tables $78K Flock Safety Contract Amid Heated Community Debate</a></h2>
+                <p class="card-summary">Troy, NY city council tabled a $78,000 Flock Safety contract after residents raised concerns about immigration enforcement and civil liberties. The heated public hearing highlighted the growing political risk for municipalities considering ALPR deployments.</p>
+                <a href="https://www.wamc.org/news/2026-03-20/city-of-troy-officials-and-residents-engaged-in-heated-debate-over-flock-safety-technology-thursday-night" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">07:14 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://laist.com/news/south-pasadena-cancels-flock-safety-contract-privacy-concerns" target="_blank">South Pasadena Cancels Flock Safety ALPR Contract Over Illegal Federal Data Sharing</a></h2>
+                <p class="card-summary">South Pasadena terminated its Flock Safety contract after learning the company shared local ALPR data with federal immigration agencies without city authorization. The cancellation joins a growing list of California municipalities cutting ties with Flock over data privacy violations.</p>
+                <a href="https://laist.com/news/south-pasadena-cancels-flock-safety-contract-privacy-concerns" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">06:27 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://roughdraftatlanta.com/2026/03/20/jail-drone-contraband-security/" target="_blank">Fulton County Jail Launches First-Ever Flock Safety Drone-as-First-Responder Program</a></h2>
+                <p class="card-summary">Fulton County Jail in Atlanta has deployed a drone-as-first-responder system powered by Flock Safety, marking the first such program in a correctional facility. The autonomous drone responds to security alerts and perimeter breaches faster than human guards can.</p>
+                <a href="https://roughdraftatlanta.com/2026/03/20/jail-drone-contraband-security/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Financial</span>
+                    <span class="time-tag">06:27 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://ubn.news/ukraine-defense-tech-company-buntar-aerospace-raises-10-4m-in-a-new-funding-round/" target="_blank">Axon Enterprise Leads $10.4M Investment in Ukrainian Drone Startup Buntar Aerospace</a></h2>
+                <p class="card-summary">Axon Enterprise led a $10.4M funding round in Buntar Aerospace, a Ukrainian defense drone company. The investment signals Axon's push beyond law enforcement into defense technology and the growing convergence of civilian surveillance and military drone markets.</p>
+                <a href="https://ubn.news/ukraine-defense-tech-company-buntar-aerospace-raises-10-4m-in-a-new-funding-round/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card" style="border-left: 3px solid var(--orange);">
+                <div class="card-meta">
+                    <span class="priority-badge priority-orange">ð  Competitor / Legal</span>
+                    <span class="time-tag">06:26 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://chicago.suntimes.com/the-watchdogs/2026/03/20/motorola-solutions-millions-trade-secrets-theft-hytera-chinese" target="_blank">Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera</a></h2>
+                <p class="card-summary">Motorola Solutions is pushing for a massive restitution award against Chinese competitor Hytera in a long-running trade secrets case. The appeal could result in one of the largest intellectual property damages awards in the communications technology industry.</p>
+                <a href="https://chicago.suntimes.com/the-watchdogs/2026/03/20/motorola-solutions-millions-trade-secrets-theft-hytera-chinese" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+        </div>
+
+        <!-- ======================== YESTERDAY MARCH 19 ======================== -->
+        <div class="section-label">Yesterday &mdash; March 19, 2026</div>
+
+        <!-- Featured: FT Article (top story still active) -->
+        <div class="featured-card" style="border-left: 3px solid var(--red);">
+            <div class="card-meta">
+                <span class="priority-badge priority-red">ð´ High Priority</span>
+                <span class="time-tag">09:32 AM BRT &mdash; Mar 17</span>
+            </div>
+            <h2 class="card-title"><a href="https://www.ft.com/content/5c3b1613-1a1b-49f0-aa0c-ce2bbe3424fc" target="_blank">How AI Licence Plate Readers Became a Flashpoint in US Immigration Battles</a></h2>
+            <p class="card-summary">Financial Times reports that 53 cities across 20 states have deactivated or rejected Flock Safety cameras, including 38 in the past six months, amid growing backlash over ICE using the $7.5B company's ALPR network for immigration enforcement. Amazon's Ring also cancelled its planned partnership with Flock last month.</p>
+            <a href="https://www.ft.com/content/5c3b1613-1a1b-49f0-aa0c-ce2bbe3424fc" target="_blank" class="read-more">Read full article &rarr;</a>
+        </div>
+
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Brazil Market</span>
+                    <span class="time-tag">09:25 AM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://prefeitura.rio/casa-civil/rio-inaugura-primeira-fronteira-digital-e-amplia-cerco-inteligente-na-cidade/" target="_blank">Rio de Janeiro Inaugurates First "Digital Frontier" AI Surveillance Portal Under CIVITAS Program</a></h2>
+                <p class="card-summary">Rio inaugurated its first intelligent semi-portal with 3,200+ AI cameras reading plates and tracking routes, first of 16 planned this year with 56 by 2028. The R$180M/year CIVITAS program targets 6,000 AI super-cameras by end of 2026, signaling aggressive Brazilian municipal investment in the exact market PAX operates in.</p>
+                <a href="https://prefeitura.rio/casa-civil/rio-inaugura-primeira-fronteira-digital-e-amplia-cerco-inteligente-na-cidade/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+        </div>
+
+        <!-- ======================== MARCH 18 ======================== -->
+        <div class="section-label">Wednesday &mdash; March 18, 2026</div>
+
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">06:29 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://www.investing.com/news/company-news/rekor-receives-patent-for-crimebased-license-plate-data-storage-93CH-4568105" target="_blank">Rekor Systems Secures U.S. Patent for Incident-Based ALPR Data Retention</a></h2>
+                <p class="card-summary">Rekor Systems received a U.S. patent for a privacy-first ALPR data retention model that ties storage duration to offense severity rather than fixed time windows. The patent directly addresses the data-retention backlash hitting competitors like Flock Safety across U.S. cities.</p>
+                <a href="https://www.investing.com/news/company-news/rekor-receives-patent-for-crimebased-license-plate-data-storage-93CH-4568105" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">06:29 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://securityjournaluk.com/motorola-solutions-unveils-contract-with-cumbia-constabulary/" target="_blank">Motorola Solutions Wins 10-Year Contract with Cumbria Constabulary for Digital Policing Platform</a></h2>
+                <p class="card-summary">Motorola Solutions signed a 10-year deal with Cumbria Constabulary to deploy its Pronto digital policing platform across all 1,300 front-line officers. This brings total daily Pronto users to over 75,000 across 24 of the UK's 45 territorial police forces.</p>
+                <a href="https://securityjournaluk.com/motorola-solutions-unveils-contract-with-cumbia-constabulary/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">06:27 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://www.eastbaytimes.com/2026/03/18/richmond-extends-flock-contract-agrees-to-turn-cameras-back-on/" target="_blank">Richmond, CA Votes 4-3 to Extend Flock Safety Contract Through 2026, Reinstates Cameras</a></h2>
+                <p class="card-summary">Richmond City Council voted 4-3 to extend its Flock Safety contract through December 2026, reactivating 96 ALPR and 65 PTZ cameras offline since October due to a data-sharing controversy. The city is simultaneously seeking alternative vendors, with proposals due March 27.</p>
+                <a href="https://www.eastbaytimes.com/2026/03/18/richmond-extends-flock-contract-agrees-to-turn-cameras-back-on/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+        </div>
+
+        <!-- ======================== MARCH 17 ======================== -->
+        <div class="section-label">Monday &mdash; March 17, 2026</div>
+
+        <div class="news-grid">
+            <div class="news-card" style="border-left: 3px solid var(--orange);">
+                <div class="card-meta">
+                    <span class="priority-badge priority-orange">Competitor / Market</span>
+                    <span class="time-tag">11:02 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://wehotimes.com/west-hollywood-votes-to-keep-flock-safety-cameras-contract-seeks-stronger-safeguards/" target="_blank">West Hollywood Votes 3-2 to Keep Flock Safety Contract, Demands Stronger Data Safeguards</a></h2>
+                <p class="card-summary">West Hollywood City Council voted 3-2 tonight to maintain its Flock Safety agreement, after Flock admitted it ran a 2024 pilot program with CBP and Homeland Security Investigations &mdash; and confirmed it has since shut off all out-of-state and federal access for California agencies.</p>
+                <a href="https://wehotimes.com/west-hollywood-votes-to-keep-flock-safety-cameras-contract-seeks-stronger-safeguards/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">11:02 PM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://denverite.com/2026/03/17/flock-private-cameras-denver/" target="_blank">Flock Loses Denver City Contract But Private Cameras Will Keep Operating</a></h2>
+                <p class="card-summary">Despite Denver ending its city contract with Flock Safety, hundreds of privately-owned Flock cameras operated by businesses, homeowners and neighborhood groups will continue running &mdash; with police now required to request data access individually rather than having automatic network access.</p>
+                <a href="https://denverite.com/2026/03/17/flock-private-cameras-denver/" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Brazil Market</span>
+                    <span class="time-tag">09:01 AM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://abcdoabc.com.br/muralha-paulista-foragidos-em-estadios-sp" target="_blank">Muralha Paulista Facial Recognition Helps Police Arrest Fugitives at S&atilde;o Paulo Stadiums</a></h2>
+                <p class="card-summary">S&atilde;o Paulo's Muralha Paulista surveillance program, operating at Vila Belmiro stadium through a partnership between the State Security Secretariat and Santos FC, used facial recognition technology to identify and arrest fugitives during matches.</p>
+                <a href="https://abcdoabc.com.br/muralha-paulista-foragidos-em-estadios-sp" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">09:00 AM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://www.kbia.org/kbia-news/2026-03-16/columbias-flock-safety-surveillance-network-nears-completion" target="_blank">Columbia, MO's Flock Safety Surveillance Network Nears Completion &mdash; 900K Vehicles Detected Monthly</a></h2>
+                <p class="card-summary">Columbia's Flock Safety ALPR network has seven devices remaining in construction, with installed cameras already detecting nearly 900,000 vehicles per month. Police used Flock data in February to locate an armed robbery suspect.</p>
+                <a href="https://www.kbia.org/kbia-news/2026-03-16/columbias-flock-safety-surveillance-network-nears-completion" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+            <div class="news-card">
+                <div class="card-meta">
+                    <span class="priority-badge priority-yellow">Competitor / Market</span>
+                    <span class="time-tag">08:53 AM BRT</span>
+                </div>
+                <h2 class="card-title"><a href="https://www.suncoastnews.com/news/fears-of-police-state-surveillance-aired-at-license-plate-reader-workshop/article_82491d8b-8fda-4d1c-9880-0e0bc9e21398.html" target="_blank">Fears of Police State Surveillance Aired at Flock License Plate Reader Workshop &mdash; Pasco County, FL</a></h2>
+                <p class="card-summary">Residents in Pasco County, Florida voiced concerns about police state surveillance at a public workshop on Flock Safety's LPR cameras, citing hacking risks and data privacy fears.</p>
+                <a href="https://www.suncoastnews.com/news/fears-of-police-state-surveillance-aired-at-license-plate-reader-workshop/article_82491d8b-8fda-4d1c-9880-0e0bc9e21398.html" target="_blank" class="read-more">Read full article &rarr;</a>
+            </div>
+        </div>
+
+        <!-- ======================== WATCHLIST ======================== -->
+        <div class="watchlist-section">
+            <div class="section-label">Standing Watchlist &mdash; Key Stories to Track</div>
+            <div class="watchlist">
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.bnews.com.br/noticias/politica/reconhecimento-facial-e-tecnologia-antidrone-seguranca-de-presidenciaveis-em-2026-deve-custar-r-200-milhoes-pf.html" target="_blank">Presidential Candidate Security in Brazil &mdash; R$200M for Facial Recognition &amp; Anti-Drone</a></div><div class="watch-item-note">Brazil's Federal Police plans R$200M for 2026 presidential candidate security with facial recognition and anti-drone tech.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://neofeed.com.br/negocios/positivo-entra-em-disputa-com-a-intelbras-em-mercado-de-r-11-bilhoes/" target="_blank">Positivo Enters R$11B Security Market to Challenge Intelbras</a></div><div class="watch-item-note">Positivo launched PositivoSEG with R$40M investment, offering AI-embedded solutions to compete with Intelbras.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.parana.pr.gov.br/aen/Noticia/Parana-sera-1o-estado-da-America-Latina-testar-cameras-corporais-com-IA-e-traducao" target="_blank">Paran&aacute; Tests Axon Body 4 Cameras with AI &mdash; First in Latin America</a></div><div class="watch-item-note">Paran&aacute; testing Axon Body 4 with AI, simultaneous translation, GPS and live streaming.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.tribunadosertao.com.br/rj-em-foco/2026/02/24/862426-estado-adia-licitacao-de-r-2-bilhoes-para-compra-de-cameras-de-seguranca" target="_blank">Rio de Janeiro Postpones R$2B Surveillance Camera Procurement</a></div><div class="watch-item-note">Rio delayed &ldquo;Projeto Sentinela&rdquo; for 200,259 cameras after audit court flagged 15 irregularities.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://jovempan.com.br/programas/jornal-da-manha/projeto-do-governo-para-compra-de-cameras-corporais-tem-adesao-de-20-estados-e-do-df.html" target="_blank">Brazil's National Body Camera Project &mdash; 21 States, 52,558 Cameras</a></div><div class="watch-item-note">R$102M allocated to nine states including S&atilde;o Paulo for police body camera procurement.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://platorb.com.br/governo-planeja-investir-r-220-mi-em-cameras-para-prf-ate-2026/" target="_blank">Brazil Plans R$220M for Federal Highway Police Body Cameras</a></div><div class="watch-item-note">Ministry of Justice plans R$220M investment for PRF body cameras across 2025-2026.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://investor.axon.com/2026-02-24-Axon-reports-Q4-2025-revenue-of-797-million,-up-39-year-over-year" target="_blank">Axon Q4 Revenue $797M (+39% YoY) &mdash; 2026 Guidance: $3.53&ndash;3.61B</a></div><div class="watch-item-note">Beat $755M estimate, shares surged 14%, record backlog of $14.4B.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.prnewswire.com/news-releases/verkada-launches-ai-powered-deterrence-ushering-in-a-new-era-where-intelligent-systems-can-help-prevent-crimes-before-they-happen-302686606.html" target="_blank">Verkada Launches AI-Powered Deterrence</a></div><div class="watch-item-note">Uses large vision and language models to detect unauthorized behavior and auto-trigger warnings.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.stocktitan.net/news/MSI/motorola-solutions-acquires-exacom-a-leading-provider-of-cloud-q4i7q8j2y5p8.html" target="_blank">Motorola Solutions Acquires Exacom</a></div><div class="watch-item-note">Expanding software and security capabilities in public safety communications and 911 recording.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://therecord.media/court-upholds-fcc-ban-on-hikvision-dahua-products" target="_blank">Court Upholds FCC Ban on Hikvision &amp; Dahua</a></div><div class="watch-item-note">Federal appeals court confirmed FCC authority to ban Chinese surveillance products.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.theregister.com/2026/03/04/iranian_hacking_attempts_ip_cameras/" target="_blank">Iranian Hacking Groups Target Hikvision &amp; Dahua Cameras</a></div><div class="watch-item-note">Check Point tracked hundreds of exploitation attempts across Israel and the Middle East.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.foxnews.com/politics/lawsuit-claims-smart-home-cameras-sold-us-carried-undisclosed-security-risks" target="_blank">Nebraska AG Sues Resideo Over Hikvision/Dahua Security Risks</a></div><div class="watch-item-note">Alleges failure to disclose risks in cameras that can be compelled by Chinese intelligence.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.dailypolitical.com/2026/03/03/soundthinking-q4-earnings-call-highlights.html" target="_blank">SoundThinking Q4 Revenue $24.8M &mdash; Targets 15% ARR Growth</a></div><div class="watch-item-note">Full-year 2025 revenue $104.1M. PlateRanger ALPR targeting $1.5M in new ARR.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://dronexl.co/2026/03/13/minnesota-skydio-drones-ice-operation-fears/" target="_blank">ICE's Skydio Drones &amp; Metro Surge in Minneapolis</a></div><div class="watch-item-note">ICE signed $514K contract for Skydio X10D drones, confirmed use monitoring protests.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.ithaca.com/news/ithaca/flock-safety-set-to-exit-ithaca-following-common-council-vote/article_a71585bc-3ee7-4015-9a75-f934ec3ada45.html" target="_blank">Flock Safety Set to Exit Ithaca After Council Vote</a></div><div class="watch-item-note">Unanimous vote to end Flock contract, suspending all LPR and gunshot detection services.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.globenewswire.com/news-release/2026/02/12/3237793/0/en/An-Update-on-Ring-Partnership-Flock-Safety-Refocuses-on-Local-Communities-and-Innovation.html" target="_blank">Flock Safety Pauses Ring Partnership</a></div><div class="watch-item-note">Canceled planned integration with Amazon's Ring after community stakeholder concerns.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.carahsoft.com/news/verkada-and-carahsoft-partner-to-expand-government-access-to-verkadas-secure-cloud-based-physical-security-solutions-2026" target="_blank">Verkada &amp; Carahsoft Partner for Government Access</a></div><div class="watch-item-note">Verkada ($5.8B valuation) signed distribution deal for government sector expansion.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://9thstreetjournal.org/2026/01/29/residents-slam-police-department-software-contract-citing-data-privacy-concerns/" target="_blank">Durham Residents Slam $517K Peregrine Technologies Contract</a></div><div class="watch-item-note">Privacy concerns over Real-Time Crime Center, company connections to Palantir.</div></div>
+            </div>
+        </div>
+
+        <!-- Filtered articles from Sunday audit -->
+        <div class="watchlist-section">
+            <div class="section-label">Sunday Audit &mdash; Filtered but Worth Watching</div>
+            <div class="watchlist">
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.manilatimes.net/2026/03/16/tmt-newswire/pr-newswire/dahua-technology-showcases-ai-powered-its-solutions-at-intertraffic-2026/2300402" target="_blank">Dahua Technology at Intertraffic 2026</a></div><div class="watch-item-note">Product showcase &mdash; borderline if Dahua is a priority competitor.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.denvergazette.com/2026/03/11/denver-mayors-office-requests-delay-on-axon-alpr-contract-vote/" target="_blank">Denver Axon Contract Vote &mdash; March 18</a></div><div class="watch-item-note">Vote concluded March 18. Flock contract ended. Watch for ongoing coverage.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://folhadoaco.com.br/2026/03/14/ordem-publica-cameras-sao-instaladas-e-monitoramento-cresce-em-bairros-de-volta-redonda/" target="_blank">Volta Redonda Expands Surveillance Network</a></div><div class="watch-item-note">Municipal camera expansion with facial recognition and LPR.</div></div>
+                <div class="watch-item"><div class="watch-item-title"><a href="https://www.verkada.com/verkada-one/london/" target="_blank">VerkadaOne London &mdash; March 19</a></div><div class="watch-item-note">Cloud security conference in London today.</div></div>
+            </div>
+        </div>
+
+        <div class="watchlist-section" style="margin-top: 2rem;">
+            <div class="section-label">Key Events This Week</div>
+            <div class="events-card">
+                <div class="event-row">
+                    <div class="event-item">
+                        <div class="event-date">Mar 18 (Yesterday)</div>
+                        <div class="event-name">Denver Axon ALPR Contract Vote &mdash; Flock Contract Ended</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Mar 19 (Today)</div>
+                        <div class="event-name">VerkadaOne London Conference</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">Mar 27</div>
+                        <div class="event-name">Richmond, CA &mdash; Alternative Vendor Proposals Due</div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">TBD</div>
+                        <div class="event-name">PEC da Seguran&ccedil;a P&uacute;blica moves to Senate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+           <p class="footer-text"><strong>PAX Intelligence</strong> &mdash; Curated from #breaking-news &bull; Updated March 20, 2026</p>
+    </footer>
+
+</body>
+</html>
