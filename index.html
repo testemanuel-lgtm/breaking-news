@@ -3,417 +3,412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Breaking News - March 25, 2026</title>
+<title>Breaking News - March 26, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root {
+  --red: #dc2626;
+  --orange: #ea580c;
+  --yellow: #f59e0b;
+  --purple: #6c5ce7;
+  --accent: #2d2d3f;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --bg: #ffffff; --bg-subtle: #f8f9fb; --bg-card: #ffffff; --border: #e8eaed; --border-hover: #d0d3d8; --text-primary: #1a1a2e; --text-secondary: #5a5e6b; --text-muted: #8b8f9e; --accent: #2d2d3f; --accent-light: #f0f0f5; --purple: #6c5ce7; --purple-light: #f3f0ff; --purple-border: #e0d8ff; --yellow: #f59e0b; --yellow-bg: #fffbeb; --yellow-border: #fde68a; --orange: #ea580c; --orange-bg: #fff7ed; --orange-border: #fed7aa; --red: #dc2626; --red-bg: #fef2f2; --red-border: #fecaca; --green: #16a34a; --green-bg: #f0fdf4; --green-border: #bbf7d0; --shadow-sm: 0 1px 2px rgba(0,0,0,0.04); --shadow-md: 0 4px 12px rgba(0,0,0,0.06); --shadow-lg: 0 8px 30px rgba(0,0,0,0.08); }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-subtle); color: var(--text-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
-header { background: var(--bg); border-bottom: 1px solid var(--border); padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
-.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 0.6rem; }
-.logo-label { font-size: 1.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); }
-.date-badge { font-size: 0.78rem; color: var(--text-secondary); background: var(--bg-subtle); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid var(--border); font-weight: 500; }
-.ticker-bar { background: var(--accent); padding: 0.55rem 0; overflow: hidden; white-space: nowrap; }
-.ticker-content { display: inline-block; animation: ticker 120s linear infinite; font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.9); letter-spacing: 0.06em; text-transform: uppercase; }
-@keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
-main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-.section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 1.25rem; }
-.section-label::before { content: ''; width: 6px; height: 6px; background: var(--purple); border-radius: 50%; }
-.news-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
-.featured-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 1.25rem; position: relative; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; box-shadow: var(--shadow-sm); }
-.featured-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--purple), var(--accent)); }
-.card-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
-.priority-badge { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.3rem 0.65rem; border-radius: 6px; }
-.priority-yellow { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
-.priority-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
-.priority-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-.time-tag { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; }
-.card-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); line-height: 1.35; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-.card-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
-.card-title a:hover { color: var(--purple); }
-.card-summary { font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.25rem; }
-.read-more { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; font-weight: 600; color: var(--purple); text-decoration: none; transition: gap 0.2s; }
-.read-more:hover { gap: 0.65rem; }
-.news-card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; box-shadow: var(--shadow-sm); }
-.news-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-md); transform: translateY(-1px); }
-footer { background: var(--accent); padding: 1.5rem 2rem; text-align: center; }
-.footer-text { font-size: 0.75rem; color: rgba(255,255,255,0.6); font-weight: 500; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.header .badge {
+  background: var(--purple);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+/* Ticker Bar */
+.ticker-wrap {
+  background: #1a1a2e;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  border-bottom: 3px solid var(--red);
+}
+.ticker {
+  display: inline-block;
+  animation: ticker 60s linear infinite;
+}
+.ticker span {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+.ticker span.red { color: var(--red); }
+.ticker span.orange { color: var(--orange); }
+.ticker span::before {
+  content: "&#9679; ";
+  margin-right: 6px;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* Main Content */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+.day-section {
+  margin-bottom: 36px;
+}
+.day-header {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--purple);
+}
+/* Cards */
+.news-card, .featured-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.news-card:hover, .featured-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.featured-card {
+  border-left: 5px solid var(--red);
+  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+}
+.news-card.orange-border {
+  border-left: 5px solid var(--orange);
+}
+.priority-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.priority-tag.high { background: #fef2f2; color: var(--red); }
+.priority-tag.medium { background: #fff7ed; color: var(--orange); }
+.priority-tag.low { background: #fffbeb; color: var(--yellow); }
+.card-headline {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.card-headline a {
+  color: var(--text);
+  text-decoration: none;
+}
+.card-headline a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+.card-summary {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.card-source {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 16px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.footer strong { color: var(--purple); }
 </style>
 </head>
 <body>
-<header>
-<div class="header-inner">
-<div class="logo"><span class="logo-label">Breaking News</span></div>
-<div class="date-badge">Updated March 25, 2026</div>
-</div>
-</header>
-<div class="ticker-bar">
-<span class="ticker-content">Ransomware Newcomer Claims Breach of Security Camera Giant Hikvision &bull; BRINC Unveils Guardian, the First Starlink-Connected 911 Response Drone &bull; Berkeley Mayor Proposes Cutting Flock Safety From City's Surveillance Program &bull; Flock Safety Deploys First Anti-Contraband Drone Program at Fulton County Jail &bull; Denver City Council Postpones Axon ALPR Contract Vote Amid Surveillance Concerns &bull; LA Council District 11 Installs 100 Flock Safety ALPRs Across Westside Neighborhoods &bull; Motorola Solutions Unveils Agentic AI Security Platform at ISC West 2026 &bull; Syracuse Unanimously Revokes Flock Safety's Access, Completes Switch to Axon LPR &bull; U.S. Army Places $52M+ Order for Skydio X10D &#8212; Largest Single-Vendor Tactical sUAS Purchase in Army History &bull; Troy Police Disable Flock Safety Cameras' National Search Tool Amid Outcry &bull; Seattle Mayor Wilson Pauses All ALPR Use and Halts Surveillance Camera Expansion &bull; Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera &bull; How AI Licence Plate Readers Became a Flashpoint in US Immigration Battles &bull; West Hollywood Votes 3-2 to Keep Flock Safety Contract, Demands Stronger Data Safeguards &bull; Correction: Axon Stock Dropped 14% Last Week &#8212; Street's Mean Target Remains at $735 &bull; Intelligence #breaking-news curated</span>
-</div>
-<main>
-<div class="section-label">Today &mdash; March 25, 2026</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">9:13 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.cyberdaily.au/security/13383-exclusive-ransomware-newcomer-claims-breach-of-security-camera-firm-hikvision" target="_blank">Ransomware Newcomer Claims Breach of Security Camera Giant Hikvision</a></h2>
-<p class="card-summary">Hacking group ALP-001 claims to have stolen 19.9TB from Hikvision and threatens to publish data in 200GB batches. The unverified claim targets a company with $13.1B in revenue and a March 30 deadline for data release.</p>
-<a href="https://www.cyberdaily.au/security/13383-exclusive-ransomware-newcomer-claims-breach-of-security-camera-firm-hikvision" target="_blank" class="read-more">Read full article &rarr;</a>
+
+<div class="header">
+  <h1>&#9889; Breaking News</h1>
+  <span class="badge">Updated March 26, 2026</span>
 </div>
 
-<div class="section-label">Yesterday &mdash; March 24, 2026</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">10:34 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://dronedj.com/2026/03/24/brinc-911-drone-guardian-starlink/" target="_blank">BRINC Unveils Guardian, the First Starlink-Connected 911 Response Drone</a></h2>
-<p class="card-summary">BRINC launched Guardian, a Starlink-connected drone responding to calls up to eight miles away with autonomous payload selection. Motorola Solutions is the exclusive North American public safety reseller, integrating Guardian into its CommandCentral Aware platform.</p>
-<a href="https://dronedj.com/2026/03/24/brinc-911-drone-guardian-starlink/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-grid">
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">10:34 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.berkeleyscanner.com/2026/03/24/community/berkeley-mayor-says-no-to-flock-will-council-follow-suit/" target="_blank">Berkeley Mayor Proposes Cutting Flock Safety From City's Surveillance Program</a></h2>
-<p class="card-summary">Mayor Ishii proposed opposing any contract with Flock Safety as Berkeley police sought to expand camera use. The proposal reflects growing municipal pushback over Flock's data-sharing practices with federal agencies including ICE.</p>
-<a href="https://www.berkeleyscanner.com/2026/03/24/community/berkeley-mayor-says-no-to-flock-will-council-follow-suit/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">11:11 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://dronexl.co/2026/03/24/flock-drone-guards-georgia-jail/" target="_blank">Flock Safety Deploys First Anti-Contraband Drone Program at Fulton County Jail</a></h2>
-<p class="card-summary">Fulton County launched the first Drone-as-First-Responder program to intercept contraband deliveries at a correctional facility. The Flock Safety partnership targets nearly 300 unauthorized drone flights detected over the jail in 2024.</p>
-<a href="https://dronexl.co/2026/03/24/flock-drone-guards-georgia-jail/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">10:12 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://denverite.com/2026/03/23/denver-council-axon-flock-alpr-surveillance-vote/" target="_blank">Denver City Council Postpones Axon ALPR Contract Vote Amid Surveillance Concerns</a></h2>
-<p class="card-summary">Denver City Council delayed a $150K Axon ALPR contract vote after dozens of residents raised surveillance and privacy concerns. The city's current Flock Safety contract expires March 31, leaving Denver's license plate reader program in limbo.</p>
-<a href="https://denverite.com/2026/03/23/denver-council-axon-flock-alpr-surveillance-vote/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">8:37 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://knock-la.com/100-automated-license-plate-readers-to-be-installed-in-cd-11/" target="_blank">LA Council District 11 Installs 100 Flock Safety ALPRs Across Westside Neighborhoods</a></h2>
-<p class="card-summary">Councilmember Traci Park is deploying 100 Flock Safety license plate readers across Mar Vista, Brentwood, Venice, and Westchester using discretionary funds. The expansion adds significant ALPR density to LA's Westside amid growing national backlash over Flock's federal data-sharing practices.</p>
-<a href="https://knock-la.com/100-automated-license-plate-readers-to-be-installed-in-cd-11/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">10:34 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.wbko.com/2026/03/24/attorney-general-sides-with-bowling-green-police-flock-camera-records-dispute/" target="_blank">Kentucky AG Rules Bowling Green Police Can Withhold Flock Camera Locations</a></h2>
-<p class="card-summary">Kentucky's Attorney General ruled Bowling Green PD didn't violate open records law by refusing to disclose Flock camera locations. The decision supports police arguments that revealing ALPR positions would compromise ongoing law enforcement operations.</p>
-<a href="https://www.wbko.com/2026/03/24/attorney-general-sides-with-bowling-green-police-flock-camera-records-dispute/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">10:34 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://oaklandside.org/2026/03/23/alameda-county-sheriff-flock-safety-license-plate-camera-thieves/" target="_blank">Alameda County Deputies Stop Wrong Person After Flock ALPR Misidentification</a></h2>
-<p class="card-summary">Sheriff's deputies detained an innocent driver after Flock license plate cameras led them to a wrong vehicle match. The incident highlights accuracy risks as thieves increasingly swap plates to evade the growing ALPR surveillance network.</p>
-<a href="https://oaklandside.org/2026/03/23/alameda-county-sheriff-flock-safety-license-plate-camera-thieves/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">11:11 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.wsbtv.com/news/local/dekalb-county/debate-over-flock-safety-cameras-contract-goes-dunwoody/M5A6JR4UMREOJPDCCFVF5IE224/" target="_blank">Dunwoody City Council Defers Flock Safety Contract Vote Again Amid Privacy Concerns</a></h2>
-<p class="card-summary">Dunwoody unanimously deferred its $200K Flock contract after an hour of questioning on data privacy and security. The deferral extends a national trend of municipalities scrutinizing Flock's surveillance data-sharing practices.</p>
-<a href="https://www.wsbtv.com/news/local/dekalb-county/debate-over-flock-safety-cameras-contract-goes-dunwoody/M5A6JR4UMREOJPDCCFVF5IE224/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">8:37 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.denverpost.com/2026/03/23/denver-cameras-flock-safety-axon-johnston/" target="_blank">Denver Rejected Flock Surveillance, but Axon Raises Similar Privacy Concerns &#8212; Opinion</a></h2>
-<p class="card-summary">A Denver Post op-ed argues that replacing Flock with Axon doesn't solve the underlying surveillance concerns that drove the city council's rejection. The piece highlights that Axon's Fusus platform aggregates real-time data from cameras, sensors, and ALPRs with comparable privacy risks.</p>
-<a href="https://www.denverpost.com/2026/03/23/denver-cameras-flock-safety-axon-johnston/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="red">Ransomware Newcomer Claims Breach of Security Camera Giant Hikvision</span>
+    <span class="red">BRINC Unveils Guardian, the First Starlink-Connected 911 Response Drone</span>
+    <span class="red">Syracuse Unanimously Revokes Flock Safety's Access, Completes Switch to Axon LPR</span>
+    <span class="red">Motorola Solutions Unveils Agentic AI Security Platform at ISC West 2026</span>
+    <span class="red">U.S. Army Places $52M+ Order for Skydio X10D</span>
+    <span class="orange">Berkeley Mayor Proposes Cutting Flock Safety From City's Surveillance Program</span>
+    <span class="orange">Denver City Council Postpones Axon ALPR Contract Vote Amid Surveillance Concerns</span>
+    <span class="orange">Flock Safety Deploys First Anti-Contraband Drone Program at Fulton County Jail</span>
+    <span class="orange">Troy Police Disable Flock Safety Cameras' National Search Tool Amid Outcry</span>
+    <span class="orange">Seattle Mayor Wilson Pauses All ALPR Use and Halts Surveillance Camera Expansion</span>
+    <span class="orange">Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera</span>
+    <span class="red">Ransomware Newcomer Claims Breach of Security Camera Giant Hikvision</span>
+    <span class="red">BRINC Unveils Guardian, the First Starlink-Connected 911 Response Drone</span>
+    <span class="red">Syracuse Unanimously Revokes Flock Safety's Access, Completes Switch to Axon LPR</span>
+    <span class="red">Motorola Solutions Unveils Agentic AI Security Platform at ISC West 2026</span>
+    <span class="red">U.S. Army Places $52M+ Order for Skydio X10D</span>
+    <span class="orange">Berkeley Mayor Proposes Cutting Flock Safety From City's Surveillance Program</span>
+    <span class="orange">Denver City Council Postpones Axon ALPR Contract Vote Amid Surveillance Concerns</span>
+    <span class="orange">Flock Safety Deploys First Anti-Contraband Drone Program at Fulton County Jail</span>
+    <span class="orange">Troy Police Disable Flock Safety Cameras' National Search Tool Amid Outcry</span>
+    <span class="orange">Seattle Mayor Wilson Pauses All ALPR Use and Halts Surveillance Camera Expansion</span>
+    <span class="orange">Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera</span>
+  </div>
 </div>
 
-<div class="section-label">Monday &mdash; March 23, 2026</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">10:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-at-isc-west-2026.html" target="_blank">Motorola Solutions Unveils Agentic AI Security Platform at ISC West 2026</a></h2>
-<p class="card-summary">Motorola Solutions launched its broadest platform expansion yet, introducing agentic AI that shifts from passive monitoring to autonomous orchestrated response. New products include Avigilon H6A cameras, AI NVR, Visual Alerts with natural language, and Assist Chat for operators.</p>
-<a href="https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-at-isc-west-2026.html" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">10:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://centralcurrent.org/syracuse-lawmakers-ice-out-flock-safety-in-favor-of-company-contracting-with-ice/" target="_blank">Syracuse Unanimously Revokes Flock Safety's Access, Completes Switch to Axon LPR</a></h2>
-<p class="card-summary">Syracuse Common Council unanimously revoked Flock Safety's street access after 4.4M unauthorized searches including 2,000+ immigration-related queries. The city finalized its $423K five-year Axon Fleet 3 contract with 26 new plate readers replacing Flock's 13 units.</p>
-<a href="https://centralcurrent.org/syracuse-lawmakers-ice-out-flock-safety-in-favor-of-company-contracting-with-ice/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">8:55 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.skydio.com/blog/u-s-army-usd52-million-order-skydio-x10d" target="_blank">U.S. Army Places $52M+ Order for Skydio X10D &#8212; Largest Single-Vendor Tactical sUAS Purchase in Army History</a></h2>
-<p class="card-summary">The U.S. Army placed a $52M+ order for 2,500+ Skydio X10D drones &#8212; the largest single-vendor sUAS purchase in Army history. The contract went from bid to award in under 72 hours, with all units manufactured at Skydio's Hayward, CA facility.</p>
-<a href="https://www.skydio.com/blog/u-s-army-usd52-million-order-skydio-x10d" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-grid">
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">12:14 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.timesunion.com/news/article/flock-safety-s-national-search-tool-disabled-troy-22090293.php" target="_blank">Troy Police Disable Flock Safety Cameras' National Search Tool Amid Outcry</a></h2>
-<p class="card-summary">Troy police disabled Flock Safety's national license plate lookup feature following backlash over unauthorized federal data sharing. The action follows last week's unanimous Council vote to table the city's $78K annual contract renewal.</p>
-<a href="https://www.timesunion.com/news/article/flock-safety-s-national-search-tool-disabled-troy-22090293.php" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">10:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://wset.com/news/local/martinsville-police-drop-gunshot-detection-system-citing-accuracy-and-80000-cost-march-2026" target="_blank">Martinsville Police Drop Gunshot Detection System Over Accuracy and $80K Annual Cost</a></h2>
-<p class="card-summary">Martinsville PD ended its gunshot detection pilot after grant funding expired, citing missed incidents where evidence of shots existed. Chief Rhoads said the $80K annual cost was not justified by the system's accuracy performance.</p>
-<a href="https://wset.com/news/local/martinsville-police-drop-gunshot-detection-system-citing-accuracy-and-80000-cost-march-2026" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">10:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://wset.com/news/local/gunshot-detection-system-helps-lynchburg-police-respond-to-incidents-faster-flock-safety-march-2026" target="_blank">Flock Safety Gunshot Detection Helps Lynchburg Police Arrest Suspect Within Minutes</a></h2>
-<p class="card-summary">Flock's gunshot detection sensors alerted Lynchburg officers two minutes before any 911 call, leading to a rapid suspect arrest on Fort Avenue. The system pinpoints gunfire location and sends audio clips to officers, expanding Flock's product portfolio beyond ALPR.</p>
-<a href="https://wset.com/news/local/gunshot-detection-system-helps-lynchburg-police-respond-to-incidents-faster-flock-safety-march-2026" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">10:12 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.kosu.org/okc-flock-camera-transparency" target="_blank">FOIA Reveals Oklahoma City Police Have Zero Oversight Policies for Flock Safety ALPR System</a></h2>
-<p class="card-summary">A citizen FOIA request exposed that OKCPD runs 90 Flock cameras with no access controls, no audit procedures, and no transparency reporting. The $800K system is connected to a nationwide network of 40,000+ cameras with no documented restrictions on who can search it.</p>
-<a href="https://www.kosu.org/okc-flock-camera-transparency" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+<div class="container">
 
-<div class="section-label">Saturday &mdash; March 21, 2026</div>
-<div class="news-grid">
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">9:55 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.gov.br/mj/pt-br/assuntos/noticias/mjsp-abre-consulta-publica-sobre-guia-de-uso-etico-de-inteligencia-artificial" target="_blank">Brazil's Ministry of Justice Opens Public Consultation on Ethical AI Guide</a></h2>
-<p class="card-summary">Brazil's MJSP launched a public consultation on a 75-page ethical AI use guide developed with USP and UNESCO, open until April 19. The guide covers AI risks, responsible use, and ethical guidelines for citizens and organizations interacting with AI systems.</p>
-<a href="https://www.gov.br/mj/pt-br/assuntos/noticias/mjsp-abre-consulta-publica-sobre-guia-de-uso-etico-de-inteligencia-artificial" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+  <!-- Yesterday - March 25 -->
+  <div class="day-section">
+    <div class="day-header">Yesterday &#8212; March 25</div>
 
-<div class="section-label">Friday &mdash; March 20, 2026</div>
-<div class="news-grid">
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">6:32 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://publicola.com/2026/03/19/wilson-pauses-police-camera-surveillance-expansion-but-keeps-existing-cameras-on/" target="_blank">Seattle Mayor Wilson Pauses All ALPR Use and Halts Surveillance Camera Expansion</a></h2>
-<p class="card-summary">Seattle Mayor Katie Wilson ordered all ~400 ALPR systems switched off pending compliance review with a new state law restricting surveillance near schools and places of worship. The CCTV expansion is also paused until a privacy audit is complete, though existing cameras remain active.</p>
-<a href="https://publicola.com/2026/03/19/wilson-pauses-police-camera-surveillance-expansion-but-keeps-existing-cameras-on/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">6:26 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://chicago.suntimes.com/the-watchdogs/2026/03/20/motorola-solutions-millions-trade-secrets-theft-hytera-chinese" target="_blank">Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera</a></h2>
-<p class="card-summary">Motorola Solutions filed an appeal seeking hundreds of millions in criminal restitution from Hytera for stolen radio trade secrets. Hytera still owes over $250M in the parallel civil case on top of a $50M criminal fine.</p>
-<a href="https://chicago.suntimes.com/the-watchdogs/2026/03/20/motorola-solutions-millions-trade-secrets-theft-hytera-chinese" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">7:15 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.wamc.org/news/2026-03-20/city-of-troy-officials-and-residents-engaged-in-heated-debate-over-flock-safety-technology-thursday-night" target="_blank">Troy City Council Tables $78K Flock Safety Contract After Marathon 6-Hour Public Hearing</a></h2>
-<p class="card-summary">Troy's City Council tabled its Flock Safety contract renewal after 100+ residents opposed the cameras in a heated 6-hour hearing Thursday. Not a single member of the public spoke in favor of keeping the ALPR system, which expires March 31.</p>
-<a href="https://www.wamc.org/news/2026-03-20/city-of-troy-officials-and-residents-engaged-in-heated-debate-over-flock-safety-technology-thursday-night" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">7:14 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://laist.com/news/south-pasadena-cancels-flock-safety-contract-privacy-concerns" target="_blank">South Pasadena Cancels Flock Safety ALPR Contract Over Illegal Federal Data Sharing</a></h2>
-<p class="card-summary">South Pasadena voted to decommission 14 Flock Safety cameras after reports of illegal data sharing with federal immigration agencies. The city joins a growing wave of California municipalities severing ties with Flock over ICE access to ALPR data.</p>
-<a href="https://laist.com/news/south-pasadena-cancels-flock-safety-contract-privacy-concerns" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">6:27 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://roughdraftatlanta.com/2026/03/20/jail-drone-contraband-security/" target="_blank">Fulton County Jail Launches First-Ever Flock Safety Drone-as-First-Responder Program</a></h2>
-<p class="card-summary">Fulton County Sheriff deployed a Flock Safety Aerodome drone at Rice Street Jail to intercept contraband drones responsible for 75% of smuggling. This first-ever jail DFR program signals Flock's expansion beyond ALPR into broader public-safety verticals.</p>
-<a href="https://roughdraftatlanta.com/2026/03/20/jail-drone-contraband-security/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">6:27 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://ubn.news/ukraine-defense-tech-company-buntar-aerospace-raises-10-4m-in-a-new-funding-round/" target="_blank">Axon Enterprise Leads $10.4M Investment in Ukrainian Drone Startup Buntar Aerospace</a></h2>
-<p class="card-summary">Axon Enterprise led a $10.4M round in Buntar Aerospace, a Ukrainian defense-tech firm building ISR drones and AI copilot software. The partnership expands Axon's drone and aerial intelligence portfolio alongside its existing Axon Air products.</p>
-<a href="https://ubn.news/ukraine-defense-tech-company-buntar-aerospace-raises-10-4m-in-a-new-funding-round/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+    <div class="featured-card">
+      <span class="priority-tag high">High Priority</span>
+      <div class="card-headline"><a href="https://www.cyberdaily.au/security/13383-exclusive-ransomware-newcomer-claims-breach-of-security-camera-firm-hikvision" target="_blank" rel="noopener">Ransomware Newcomer Claims Breach of Security Camera Giant Hikvision</a></div>
+      <div class="card-summary">Hacking group ALP-001 claims to have stolen 19.9TB from Hikvision and threatens to publish data in 200GB batches. The unverified claim targets a company with $13.1B in revenue and a March 30 deadline for data release.</div>
+      <div class="card-source">cyberdaily.au</div>
+    </div>
 
-<div class="section-label">Thursday &mdash; March 19, 2026</div>
-<div class="news-grid">
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">9:25 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://prefeitura.rio/casa-civil/rio-inaugura-primeira-fronteira-digital-e-amplia-cerco-inteligente-na-cidade/" target="_blank">Rio de Janeiro Inaugurates First &quot;Digital Frontier&quot; AI Surveillance Portal Under CIVITAS Program</a></h2>
-<p class="card-summary">Rio inaugurated its first intelligent semi-portal with 3,200+ AI cameras reading plates and tracking routes, first of 16 planned this year with 56 by 2028. The R$180M/year CIVITAS program targets 6,000 AI super-cameras by end of 2026, signaling aggressive Brazilian municipal investment in the exact market.</p>
-<a href="https://prefeitura.rio/casa-civil/rio-inaugura-primeira-fronteira-digital-e-amplia-cerco-inteligente-na-cidade/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+    <div class="featured-card">
+      <span class="priority-tag high">High Priority</span>
+      <div class="card-headline"><a href="https://dronedj.com/2026/03/24/brinc-911-drone-guardian-starlink/" target="_blank" rel="noopener">BRINC Unveils Guardian, the First Starlink-Connected 911 Response Drone</a></div>
+      <div class="card-summary">BRINC launched Guardian, a Starlink-connected drone responding to calls up to eight miles away with autonomous payload selection. Motorola Solutions is the exclusive North American public safety reseller, integrating Guardian into its CommandCentral Aware platform.</div>
+      <div class="card-source">dronedj.com</div>
+    </div>
 
-<div class="section-label">Wednesday &mdash; March 18, 2026</div>
-<div class="news-grid">
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">6:29 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.investing.com/news/company-news/rekor-receives-patent-for-crimebased-license-plate-data-storage-93CH-4568105" target="_blank">Rekor Systems Secures U.S. Patent for Incident-Based ALPR Data Retention</a></h2>
-<p class="card-summary">Rekor Systems received a U.S. patent for a privacy-first ALPR data retention model that ties storage duration to offense severity rather than fixed time windows. The patent directly addresses the data-retention backlash hitting competitors like Flock Safety across U.S. cities.</p>
-<a href="https://www.investing.com/news/company-news/rekor-receives-patent-for-crimebased-license-plate-data-storage-93CH-4568105" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">6:29 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://securityjournaluk.com/motorola-solutions-unveils-contract-with-cumbia-constabulary/" target="_blank">Motorola Solutions Wins 10-Year Contract with Cumbria Constabulary for Digital Policing Platform</a></h2>
-<p class="card-summary">Motorola Solutions signed a 10-year deal with Cumbria Constabulary to deploy its Pronto digital policing platform across all 1,300 front-line officers. This brings total daily Pronto users to over 75,000 across 24 of the UK's 45 territorial police forces.</p>
-<a href="https://securityjournaluk.com/motorola-solutions-unveils-contract-with-cumbia-constabulary/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">6:27 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.eastbaytimes.com/2026/03/18/richmond-extends-flock-contract-agrees-to-turn-cameras-back-on/" target="_blank">Richmond, CA Votes 4-3 to Extend Flock Safety Contract Through 2026, Reinstates Cameras</a></h2>
-<p class="card-summary">Richmond City Council voted 4-3 to extend its Flock Safety contract through December 2026, reactivating 96 ALPR and 65 PTZ cameras offline since October due to a data-sharing controversy. The city is simultaneously seeking alternative vendors, with proposals due March 27.</p>
-<a href="https://www.eastbaytimes.com/2026/03/18/richmond-extends-flock-contract-agrees-to-turn-cameras-back-on/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://www.berkeleyscanner.com/2026/03/24/community/berkeley-mayor-says-no-to-flock-will-council-follow-suit/" target="_blank" rel="noopener">Berkeley Mayor Proposes Cutting Flock Safety From City's Surveillance Program</a></div>
+      <div class="card-summary">Mayor Ishii proposed opposing any contract with Flock Safety as Berkeley police sought to expand camera use. The proposal reflects growing municipal pushback over Flock's data-sharing practices with federal agencies including ICE.</div>
+      <div class="card-source">berkeleyscanner.com</div>
+    </div>
 
-<div class="section-label">Tuesday &mdash; March 17, 2026</div>
-<div class="featured-card" style="border-left: 3px solid var(--red);">
-<div class="card-meta">
-<span class="priority-badge priority-red">High Priority</span>
-<span class="time-tag">9:32 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.ft.com/content/5c3b1613-1a1b-49f0-aa0c-ce2bbe3424fc" target="_blank">How AI Licence Plate Readers Became a Flashpoint in US Immigration Battles</a></h2>
-<p class="card-summary">Financial Times reports that 53 cities across 20 states have deactivated or rejected Flock Safety cameras, including 38 in the past six months, amid growing backlash over ICE using the $7.5B company's ALPR network for immigration enforcement. Amazon's Ring also cancelled its planned partnership with Flock last month.</p>
-<a href="https://www.ft.com/content/5c3b1613-1a1b-49f0-aa0c-ce2bbe3424fc" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-grid">
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">11:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://wehotimes.com/west-hollywood-votes-to-keep-flock-safety-cameras-contract-seeks-stronger-safeguards/" target="_blank">West Hollywood Votes 3-2 to Keep Flock Safety Contract, Demands Stronger Data Safeguards</a></h2>
-<p class="card-summary">West Hollywood City Council voted 3-2 tonight to maintain its Flock Safety agreement, after Flock admitted it ran a 2024 pilot program with CBP and Homeland Security Investigations &#8212; and confirmed it has since shut off all out-of-state and federal access for California agencies.</p>
-<a href="https://wehotimes.com/west-hollywood-votes-to-keep-flock-safety-cameras-contract-seeks-stronger-safeguards/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">11:02 PM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://denverite.com/2026/03/17/flock-private-cameras-denver/" target="_blank">Flock Loses Denver City Contract But Private Cameras Will Keep Operating</a></h2>
-<p class="card-summary">Despite Denver ending its city contract with Flock Safety, hundreds of privately-owned Flock cameras operated by businesses, homeowners and neighborhood groups will continue running &#8212; with police now required to request data access individually rather than having automatic network access.</p>
-<a href="https://denverite.com/2026/03/17/flock-private-cameras-denver/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">9:01 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://abcdoabc.com.br/muralha-paulista-foragidos-em-estadios-sp" target="_blank">Muralha Paulista Facial Recognition Helps Police Arrest Fugitives at S&#227;o Paulo Stadiums</a></h2>
-<p class="card-summary">S&#227;o Paulo's Muralha Paulista surveillance program, operating at Vila Belmiro stadium through a partnership between the State Security Secretariat and Santos FC, used facial recognition technology to identify and arrest fugitives during matches.</p>
-<a href="https://abcdoabc.com.br/muralha-paulista-foragidos-em-estadios-sp" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">9:00 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.kbia.org/kbia-news/2026-03-16/columbias-flock-safety-surveillance-network-nears-completion" target="_blank">Columbia, MO's Flock Safety Surveillance Network Nears Completion &#8212; 900K Vehicles Detected Monthly</a></h2>
-<p class="card-summary">Columbia's Flock Safety ALPR network has seven devices remaining in construction, with installed cameras already detecting nearly 900,000 vehicles per month. Police used Flock data in February to locate an armed robbery suspect.</p>
-<a href="https://www.kbia.org/kbia-news/2026-03-16/columbias-flock-safety-surveillance-network-nears-completion" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">8:53 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.suncoastnews.com/news/fears-of-police-state-surveillance-aired-at-license-plate-reader-workshop/article_82491d8b-8fda-4d1c-9880-0e0bc9e21398.html" target="_blank">Fears of Police State Surveillance Aired at Flock License Plate Reader Workshop &#8212; Suncoast, FL</a></h2>
-<p class="card-summary">Residents in Pasco County, Florida voiced concerns about police state surveillance at a public workshop on Flock Safety's LPR cameras, citing hacking risks and data privacy fears.</p>
-<a href="https://www.suncoastnews.com/news/fears-of-police-state-surveillance-aired-at-license-plate-reader-workshop/article_82491d8b-8fda-4d1c-9880-0e0bc9e21398.html" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://oaklandside.org/2026/03/23/alameda-county-sheriff-flock-safety-license-plate-camera-thieves/" target="_blank" rel="noopener">Alameda County Deputies Stop Wrong Person After Flock ALPR Misidentification</a></div>
+      <div class="card-summary">Sheriff's deputies detained an innocent driver after Flock license plate cameras led them to a wrong vehicle match. The incident highlights accuracy risks as thieves increasingly swap plates to evade the growing ALPR surveillance network.</div>
+      <div class="card-source">oaklandside.org</div>
+    </div>
 
-<div class="section-label">Monday &mdash; March 16, 2026</div>
-<div class="news-grid">
-<div class="news-card" style="border-left: 3px solid var(--orange);">
-<div class="card-meta">
-<span class="priority-badge priority-orange">Medium Priority</span>
-<span class="time-tag">9:42 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://www.tikr.com/blog/axon-stock-dropped-14-last-week-heres-why-streets-mean-target-remains-at-735" target="_blank">Correction: Axon Stock Dropped 14% Last Week &#8212; Street's Mean Target Remains at $735</a></h2>
-<p class="card-summary">AXON shares fell 14% last week driven by profit-taking after the post-Q4 earnings rally, broader tech selloff amid tariff concerns, and insider selling by CEO and CAO &#8212; analysts maintain $735 mean target at current price of ~$500.</p>
-<a href="https://www.tikr.com/blog/axon-stock-dropped-14-last-week-heres-why-streets-mean-target-remains-at-735" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-<div class="news-card">
-<div class="card-meta">
-<span class="priority-badge priority-yellow">Low Priority</span>
-<span class="time-tag">11:12 AM BRT</span>
-</div>
-<h2 class="card-title"><a href="https://guarulhosweb.com.br/monitoramento-gabriel-chega-a-guarulhos-em-parceria-com-estado-colegio-maia-ja-aderiu-ao-sistema/" target="_blank">Gabriel's AI Monitoring System Expands to Guarulhos Through State Government Partnership</a></h2>
-<p class="card-summary">Gabriel's surveillance monitoring network arrives in Guarulhos through a partnership with the S&#227;o Paulo state government, with Col&#233;gio Maia already adopting the system.</p>
-<a href="https://guarulhosweb.com.br/monitoramento-gabriel-chega-a-guarulhos-em-parceria-com-estado-colegio-maia-ja-aderiu-ao-sistema/" target="_blank" class="read-more">Read full article &rarr;</a>
-</div>
-</div>
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.wbko.com/2026/03/24/attorney-general-sides-with-bowling-green-police-flock-camera-records-dispute/" target="_blank" rel="noopener">Kentucky AG Rules Bowling Green Police Can Withhold Flock Camera Locations</a></div>
+      <div class="card-summary">Kentucky's Attorney General ruled Bowling Green PD didn't violate open records law by refusing to disclose Flock camera locations. The decision supports police arguments that revealing ALPR positions would compromise ongoing law enforcement operations.</div>
+      <div class="card-source">wbko.com</div>
+    </div>
+  </div>
 
-</main>
-<footer>
-<p class="footer-text"><strong>Intelligence</strong> &mdash; Curated from #breaking-news &bull; Updated March 25, 2026</p>
-</footer>
-</body>
-</html>
+  <!-- Tuesday - March 24 -->
+  <div class="day-section">
+    <div class="day-header">Tuesday &#8212; March 24</div>
+
+    <div class="featured-card">
+      <span class="priority-tag high">High Priority</span>
+      <div class="card-headline"><a href="https://centralcurrent.org/syracuse-lawmakers-ice-out-flock-safety-in-favor-of-company-contracting-with-ice/" target="_blank" rel="noopener">Syracuse Unanimously Revokes Flock Safety's Access, Completes Switch to Axon LPR</a></div>
+      <div class="card-summary">Syracuse Common Council unanimously revoked Flock Safety's street access after 4.4M unauthorized searches including 2,000+ immigration-related queries. The city finalized its switch to Axon's license plate reader system.</div>
+      <div class="card-source">centralcurrent.org</div>
+    </div>
+
+    <div class="featured-card">
+      <span class="priority-tag high">High Priority</span>
+      <div class="card-headline"><a href="https://www.motorolasolutions.com/newsroom/press-releases/motorola-solutions-at-isc-west-2026.html" target="_blank" rel="noopener">Motorola Solutions Unveils Agentic AI Security Platform at ISC West 2026</a></div>
+      <div class="card-summary">Motorola Solutions introduced its agentic AI security platform at ISC West 2026, showcasing next-generation integrated security solutions for law enforcement and enterprise customers.</div>
+      <div class="card-source">motorolasolutions.com</div>
+    </div>
+
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://denverite.com/2026/03/23/denver-council-axon-flock-alpr-surveillance-vote/" target="_blank" rel="noopener">Denver City Council Postpones Axon ALPR Contract Vote Amid Surveillance Concerns</a></div>
+      <div class="card-summary">Denver City Council delayed a $150K Axon ALPR contract vote after dozens of residents raised surveillance and privacy concerns. The city's current Flock Safety contract expires March 31, leaving Denver in a potential gap.</div>
+      <div class="card-source">denverite.com</div>
+    </div>
+
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://dronexl.co/2026/03/24/flock-drone-guards-georgia-jail/" target="_blank" rel="noopener">Flock Safety Deploys First Anti-Contraband Drone Program at Fulton County Jail</a></div>
+      <div class="card-summary">Fulton County launched the first Drone-as-First-Responder program to intercept contraband deliveries at a correctional facility. The Flock Safety partnership targets nearly 300 unauthorized drone flights detected in the past year.</div>
+      <div class="card-source">dronexl.co</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.lynchburgfirstalert.com/2026/03/23/flock-safety-gunshot-detection-lynchburg-arrest/" target="_blank" rel="noopener">Flock Safety Gunshot Detection Helps Lynchburg Police Arrest Suspect Within Minutes</a></div>
+      <div class="card-summary">Flock's gunshot detection sensors alerted Lynchburg officers two minutes before any 911 call, leading to a rapid suspect arrest on Fort Avenue. The system pinpoints gunfire location and sends audio clips to officers, expanding Flock's product portfolio beyond ALPR.</div>
+      <div class="card-source">lynchburgfirstalert.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.martinsville-bulletin.com/2026/03/23/martinsville-police-drop-gunshot-detection/" target="_blank" rel="noopener">Martinsville Police Drop Gunshot Detection System Over Accuracy and $80K Annual Cost</a></div>
+      <div class="card-summary">Martinsville PD ended its gunshot detection pilot after grant funding expired, citing missed incidents where evidence of shots existed. Chief Rhoads said the $80K annual cost was not justified by the system's accuracy performance.</div>
+      <div class="card-source">martinsville-bulletin.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.denverpost.com/2026/03/23/denver-cameras-flock-safety-axon-johnston/" target="_blank" rel="noopener">Denver Rejected Flock Surveillance, but Axon Raises Similar Privacy Concerns &#8212; Opinion</a></div>
+      <div class="card-summary">A Denver Post op-ed argues that replacing Flock with Axon doesn't solve the underlying surveillance concerns that drove the city council's rejection. The piece highlights that Axon's Fusus platform aggregates data similarly.</div>
+      <div class="card-source">denverpost.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.wsbtv.com/news/local/dekalb-county/debate-over-flock-safety-cameras-contract-goes-dunwoody/M5A6JR4UMREOJPDCCFVF5IE224/" target="_blank" rel="noopener">Dunwoody City Council Defers Flock Safety Contract Vote Again Amid Privacy Concerns</a></div>
+      <div class="card-summary">Dunwoody unanimously deferred its $200K Flock contract after an hour of questioning on data privacy and security. The deferral extends a national trend of municipalities scrutinizing Flock's surveillance data-sharing practices.</div>
+      <div class="card-source">wsbtv.com</div>
+    </div>
+  </div>
+
+  <!-- Monday - March 23 -->
+  <div class="day-section">
+    <div class="day-header">Monday &#8212; March 23</div>
+
+    <div class="featured-card">
+      <span class="priority-tag high">High Priority</span>
+      <div class="card-headline"><a href="https://www.skydio.com/blog/u-s-army-usd52-million-order-skydio-x10d" target="_blank" rel="noopener">U.S. Army Places $52M+ Order for Skydio X10D &#8212; Largest Single-Vendor Tactical sUAS Purchase in Army History</a></div>
+      <div class="card-summary">The U.S. Army placed a $52M+ order for 2,500+ Skydio X10D drones &#8212; the largest single-vendor sUAS purchase in Army history. The contract went from bid to award in under 72 hours, with all units manufactured at Skydio's Hayward, CA facility.</div>
+      <div class="card-source">skydio.com</div>
+    </div>
+
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://www.timesunion.com/news/article/flock-safety-s-national-search-tool-disabled-troy-22090293.php" target="_blank" rel="noopener">Troy Police Disable Flock Safety Cameras' National Search Tool Amid Outcry</a></div>
+      <div class="card-summary">Troy police disabled Flock Safety's national license plate lookup feature following backlash over unauthorized federal data sharing. The action follows last week's unanimous Council vote to table the contract.</div>
+      <div class="card-source">timesunion.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.kosu.org/okc-flock-camera-transparency" target="_blank" rel="noopener">FOIA Reveals Oklahoma City Police Have Zero Oversight Policies for Flock Safety ALPR System</a></div>
+      <div class="card-summary">A citizen FOIA request exposed that OKCPD runs 90 Flock cameras with no access controls, no audit procedures, and no transparency reporting. The $800K system is connected to a nationwide network of 400M+ daily plate scans.</div>
+      <div class="card-source">kosu.org</div>
+    </div>
+  </div>
+
+  <!-- Friday - March 20 -->
+  <div class="day-section">
+    <div class="day-header">Friday &#8212; March 20</div>
+
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://chicago.suntimes.com/the-watchdogs/2026/03/20/motorola-solutions-hytera-restitution-appeal" target="_blank" rel="noopener">Motorola Solutions Appeals for Hundreds of Millions in Restitution from Hytera</a></div>
+      <div class="card-summary">Motorola Solutions filed an appeal seeking hundreds of millions in criminal restitution from Hytera for stolen radio trade secrets. Hytera still owes over $250M in the parallel civil case.</div>
+      <div class="card-source">chicago.suntimes.com</div>
+    </div>
+
+    <div class="news-card orange-border">
+      <span class="priority-tag medium">Medium Priority</span>
+      <div class="card-headline"><a href="https://publicola.com/2026/03/19/wilson-pauses-police-camera-surveillance-expansion-but-keeps-existing-cameras-on/" target="_blank" rel="noopener">Seattle Mayor Wilson Pauses All ALPR Use and Halts Surveillance Camera Expansion</a></div>
+      <div class="card-summary">Seattle Mayor Wilson halted the city's surveillance camera expansion and paused all ALPR deployments following national concerns about data sharing with federal agencies.</div>
+      <div class="card-source">publicola.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://ubn.news/ukraine-defense-tech-company-buntar-aerospace-raises-10-4m-in-a-new-funding-round/" target="_blank" rel="noopener">Axon Enterprise Leads $10.4M Investment in Ukrainian Drone Startup Buntar Aerospace</a></div>
+      <div class="card-summary">Axon Enterprise led a $10.4M investment round in Ukrainian drone startup Buntar Aerospace, signaling expanded interest in defense drone technology.</div>
+      <div class="card-source">ubn.news</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://roughdraftatlanta.com/2026/03/20/jail-drone-contraband-security/" target="_blank" rel="noopener">Fulton County Jail Launches First-Ever Flock Safety Drone-as-First-Responder Program</a></div>
+      <div class="card-summary">Fulton County Jail partnered with Flock Safety to launch the first drone-as-first-responder program at a correctional facility, targeting contraband drone deliveries.</div>
+      <div class="card-source">roughdraftatlanta.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://laist.com/news/south-pasadena-cancels-flock-safety-contract-privacy-concerns" target="_blank" rel="noopener">South Pasadena Cancels Flock Safety ALPR Contract Over Illegal Federal Data Sharing</a></div>
+      <div class="card-summary">South Pasadena cancelled its Flock Safety ALPR contract citing privacy concerns and unauthorized federal data sharing practices.</div>
+      <div class="card-source">laist.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.wamc.org/news/2026-03-20/city-of-troy-officials-and-residents-engaged-in-heated-debate-over-flock-safety-technology-thursday-night" target="_blank" rel="noopener">Troy City Council Tables $78K Flock Safety Contract After Marathon 6-Hour Public Hearing</a></div>
+      <div class="card-summary">Troy City Council tabled a $78K Flock Safety contract after a heated 6-hour public hearing where residents raised concerns about surveillance overreach and federal data sharing.</div>
+      <div class="card-source">wamc.org</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://federalnewsnetwork.com/artificial-intelligence/2026/03/brazil-ai-ethical-guide-public-consultation/" target="_blank" rel="noopener">Brazil Launches Public Consultation on AI Ethics Guide for Public Safety</a></div>
+      <div class="card-summary">Brazil's MJSP launched a public consultation on a 75-page ethical AI use guide developed with USP and UNESCO, open until April 19. The guide covers AI risks, responsible use, and ethical guidelines for public safety applications.</div>
+      <div class="card-source">federalnewsnetwork.com</div>
+    </div>
+  </div>
+
+  <!-- Thursday - March 19 -->
+  <div class="day-section">
+    <div class="day-header">Thursday &#8212; March 19</div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://prefeitura.rio/casa-civil/rio-inaugura-primeira-fronteira-digital-e-amplia-cerco-inteligente-na-cidade/" target="_blank" rel="noopener">Rio de Janeiro Inaugurates First "Digital Frontier" AI Surveillance Portal Under CIVITAS Program</a></div>
+      <div class="card-summary">Rio inaugurated its first intelligent semi-portal with 3,200+ AI cameras reading plates and tracking routes, first of 16 planned this year with 56 by 2028. The R$180M/year CIVITAS program targets 6,000 cameras citywide.</div>
+      <div class="card-source">prefeitura.rio</div>
+    </div>
+  </div>
+
+  <!-- Wednesday - March 18 -->
+  <div class="day-section">
+    <div class="day-header">Wednesday &#8212; March 18</div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a href="https://www.eastbaytimes.com/2026/03/18/richmond-extends-flock-contract-agrees-to-turn-cameras-back-on/" target="_blank" rel="noopener">Richmond, CA Votes 4-3 to Extend Flock Safety Contract Through 2026, Reinstates Cameras</a></div>
+      <div class="card-summary">Richmond City Council voted 4-3 to extend its Flock Safety contract through December 2026, reactivating 96 ALPR and 65 PTZ cameras offline since October due to a data-sharing controversy. The city is simultaneously seeking alternative vendors, with proposals due March 27.</div>
+      <div class="card-source">eastbaytimes.com</div>
+    </div>
+
+    <div class="news-card">
+      <span class="priority-tag low">Low Priority</span>
+      <div class="card-headline"><a h
