@@ -74,10 +74,10 @@
 
         .logo-label {
             font-size: 1.6rem;
-            font-weight: 600;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: var(--text-muted);
+            color: #000000;
         }
 
         .date-badge {
@@ -169,13 +169,7 @@
         }
 
         .featured-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--purple), var(--accent));
+            display: none;
         }
 
         .card-meta {
@@ -267,6 +261,16 @@
             margin-bottom: 1.25rem;
             transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
             box-shadow: var(--shadow-sm);
+        }
+
+        .featured-card[style*="--red"], .news-card[style*="--red"] {
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 60%);
+        }
+        .featured-card[style*="--orange"], .news-card[style*="--orange"] {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 60%);
+        }
+        .featured-card[style*="--yellow"], .news-card[style*="--yellow"] {
+            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%);
         }
 
         .news-card:hover {
